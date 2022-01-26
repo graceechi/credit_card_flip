@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family-Inconsolata&display-swap');
+
+.card_text {
+    color: #303030;
+    margin-left: 15px;
+    margin-top: 85px;
+    position: absolute;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.25rem;
+}
+
+.card_text2 {
+    color: #303030;
+    margin-left: 15px;
+    margin-top: 15px;
+    position: absolute;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1rem;
+}
+
+.card {
+    perspective: 150rem;
+    position: relative;
+    height: 10rem;
+    max-width: 400px;
+    margin: 2rem;
+    box-shadow: none;
+    background: none;
+}
+
+/* position the front and back side */
+.card-side {
+    height: 10rem;
+    border-radius: 15px;
+    /* transition: all 0.7 ease; */
+    transition: transform 0.8s;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    padding: 2rem;
+    color: white;
+    transform-style: preserve-3d;
+}
+
+.card-side.back {
+    transform: rotateY(-180deg);
+    /* background-color: #4158D0; */
+    background-image: linear-gradient(43deg, rgba(255,0,0,0), rgb(124, 72, 145));
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.3vw;
+    cursor: pointer;
+    color: black;
+}
+
+.card-side.front {
+    /* background-color: #0093E9; */
+    background-image: linear-gradient(160deg, #452470 0%, rgb(160, 86, 179) 45%, #d0aae0 100%);
+    cursor: pointer;
+    color: black;
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.card:hover .card-side.back {
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.visa {
+    bottom: 20px;
+    position: absolute;
+    right: 40px;
+    width: 20%;
+}
